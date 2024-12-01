@@ -1,0 +1,4 @@
+name: dv-music-v2
+routes:
+  - name: main-route
+    port: 8080
