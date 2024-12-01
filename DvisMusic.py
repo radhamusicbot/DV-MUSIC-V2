@@ -257,7 +257,7 @@ async def start_message_private(client, message):
 │❍ • ɴᴏ ʟᴀɢs + ɴᴏ ᴀᴅs •‍
 │❍ • 24x7 ᴏɴʟɪɴᴇ sᴜᴘᴘᴏʀᴛ •‍
 ├───────────────────⦿‍
-│    [✰ 𝖮ᴡ፝֠֩𝛈𝛆ʀ  ✰](https://t.me/DvisDmBot)
+│      [✰ 𝖮ᴡ፝֠֩𝛈𝛆ʀ  ✰](https://t.me/DvisDmBot)
 ╰───────────────────⦿"""
     buttons = InlineKeyboardMarkup(
         [
@@ -270,7 +270,7 @@ async def start_message_private(client, message):
             [
                 InlineKeyboardButton(
                     text="💌 𝖧ᴇʟᴘ $ 𝖢ᴏᴍᴍᴀɴᴅs 💌",
-                    callback_data="open_command_list",
+                    callback_data="help_command_list",
                 )
             ],
         ]
@@ -295,7 +295,7 @@ async def start_message_private(client, message):
             return
 
 
-@bot.on_callback_query(rgx("open_command_list"))
+@bot.on_callback_query(rgx("help_command_list"))
 async def open_command_list_alert(client, query):
     caption = """**🥀 All Members Can Use:**
 /play - Stream Only Audio On VC.
@@ -343,7 +343,7 @@ async def back_to_home_menu(client, query):
 │❍ • ɴᴏ ʟᴀɢs + ɴᴏ ᴀᴅs •‍
 │❍ • 24x7 ᴏɴʟɪɴᴇ sᴜᴘᴘᴏʀᴛ •‍
 ├───────────────────⦿‍
-│    [✰ 𝖮ᴡ፝֠֩𝛈𝛆ʀ  ✰](https://t.me/DvisDmBot)
+│      [✰ 𝖮ᴡ፝֠֩𝛈𝛆ʀ  ✰](https://t.me/DvisDmBot)
 ╰───────────────────⦿"""
     buttons = InlineKeyboardMarkup(
         [
@@ -651,7 +651,7 @@ async def stream_logger(
 **❍ Cʜᴀᴛ Lɪɴᴋ:** {chat_link}
 **❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}
 
-❍ 𝖩ᴏɪɴ ➛ [**sᴜᴘᴘᴏꝛᴛ**](https://t.me/+7ehnJA3aMb84OGNl)"""
+❍ 𝖩ᴏɪɴ ➛ **[sᴜᴘᴘᴏꝛᴛ](https://t.me/+7ehnJA3aMb84OGNl)**"""
             else:
                 caption = f"""**✅ 𝐒ᴛᴀʀᴛᴇᴅ 𝐒ᴛʀᴇᴀᴍɪɴɢ 𝐎ɴ 𝐕ᴄ.**
 
@@ -827,7 +827,7 @@ async def stream_audio_or_video(client, message):
                 ]
             )
             return await aux.edit_text(
-                "**🥀 Give Me Some Query To\nPlay Audio Or Video❗...\n\nℹ️ Examples:\n≽ Audio: `/play siya ram`\n≽ Video: `/vplay siya ram`**",
+                "**🥀 𝐆ɪᴠᴇ 𝐌ᴇ  𝐒ᴏᴍᴇ 𝐐ᴜᴇʀʏ To\n𝐏ʟᴀʏ 𝐀ᴜᴅɪᴏ 𝐕ɪᴅᴇᴏ❗...\n\nℹ️ 𝐄xᴀᴍᴘʟᴇs:\n≽ 𝐀ᴜᴅɪᴏ: `/play siya ram`\n≽ 𝐕ɪᴅᴇᴏ: `/vplay siya ram`**",
                 reply_markup=buttons,
             )
         query = message.text.split(None, 1)[1]
@@ -951,20 +951,20 @@ async def stream_audio_or_video(client, message):
                     ):
                         try:
                             return await aux.edit_text(
-                                f"**🤖 At First, Unban [Assistant ID](https://t.me/{app.me.username}) To Start Stream❗**"
+                                f"🤖 Aᴛ Fɪʀsᴛ, Uɴʙᴀɴ [𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁 𝗜𝗗](https://t.me/{app.me.username}) Tᴏ Sᴛᴀʀᴛ Sᴛʀᴇᴀᴍ❗"
                             )
                         except Exception:
                             LOGGER.info(
-                                f"🤖 At First, Unban Assistant ID To Start Stream❗**"
+                                f"🤖 Aᴛ Fɪʀsᴛ, Uɴʙᴀɴ **Assɪsᴛᴀɴᴛ ID** Tᴏ Sᴛᴀʀᴛ Sᴛʀᴇᴀᴍ❗"
                             )
                             return
                 except ChatAdminRequired:
                     try:
                         return await aux.edit_text(
-                            "**🤖 At First, Promote Me as An Admin❗**"
+                            "🤖 Aᴛ Fɪʀsᴛ, **Pʀᴏᴍᴏᴛᴇ Mᴇ** ᴀs Aɴ **Aᴅᴍɪɴ**❗"
                         )
                     except Exception:
-                        LOGGER.info("**🤖 At First, Promote Me as An Admin❗**")
+                        LOGGER.info("🤖 Aᴛ Fɪʀsᴛ, **Pʀᴏᴍᴏᴛᴇ Mᴇ** ᴀs Aɴ **Aᴅᴍɪɴ**❗")
                         return
                 except UserNotParticipant:
                     if message.chat.username:
@@ -978,7 +978,7 @@ async def stream_audio_or_video(client, message):
                             invitelink = await bot.export_chat_invite_link(chat_id)
                         except ChatAdminRequired:
                             return await aux.edit_text(
-                                "**🤖 Hey, I need invite user permission to add Assistant ID❗**"
+                                "**🤖 Hᴇʏ, I ɴᴇᴇᴅ ɪɴᴠɪᴛᴇ ᴜsᴇʀ ᴘᴇʀᴍɪssɪᴏɴ ᴛᴏ ᴀᴅᴅ Assɪsᴛᴀɴᴛ ID❗**"
                             )
                         except Exception as e:
                             try:
@@ -1019,12 +1019,12 @@ async def stream_audio_or_video(client, message):
                     await call.play(chat_id, stream_media, config=call_config)
                 except NoActiveGroupCall:
                     try:
-                        return await aux.edit_text(f"**⚠️ No Active VC❗...**")
+                        return await aux.edit_text(f"**⚠️ Nᴏ Aᴄᴛɪᴠᴇ VC❗...**")
                     except Exception:
                         LOGGER.info(f"⚠️ No Active VC ({chat_id})❗... ")
                         return
             except TelegramServerError:
-                return await aux.edit_text("**⚠️ Telegram Server Issue❗...**")
+                return await aux.edit_text("**⚠️ Tᴇʟᴇɢʀᴀᴍ Sᴇʀᴠᴇʀ Issᴜᴇ❗...**")
             try:
                 thumbnail = await create_thumbnail(result_x, user.id)
                 position = await add_to_queue(
@@ -1073,13 +1073,13 @@ async def pause_running_stream_on_vc(client, message):
     try:
         call_status = await get_call_status(chat_id)
         if call_status == "IDLE" or call_status == "NOTHING":
-            return await message.reply_text("**❎ Nothing Streaming❗**")
+            return await message.reply_text("**❎ Nᴏᴛʜɪɴɢ Sᴛʀᴇᴀᴍɪɴɢ❗**")
 
         elif call_status == "PAUSED":
-            return await message.reply_text("**🔈 Already Paused❗**")
+            return await message.reply_text("**🔈 Aʟʀᴇᴀᴅʏ Pᴀᴜsᴇᴅ❗**")
         elif call_status == "PLAYING":
             await call.pause_stream(chat_id)
-            return await message.reply_text("**🔈 Stream Paused❗**")
+            return await message.reply_text("**🔈 Sᴛʀᴇᴀᴍ Pᴀᴜsᴇᴅ❗**")
         else:
             return
     except Exception as e:
@@ -1100,13 +1100,13 @@ async def resume_paused_stream_on_vc(client, message):
     try:
         call_status = await get_call_status(chat_id)
         if call_status == "IDLE" or call_status == "NOTHING":
-            return await message.reply_text("**❎ Nothing Streaming❗**")
+            return await message.reply_text("**❎ Nᴏᴛʜɪɴɢ Sᴛʀᴇᴀᴍɪɴɢ❗**")
 
         elif call_status == "PLAYING":
-            return await message.reply_text("**🔊 Already Streaming❗**")
+            return await message.reply_text("**🔊 Aʟʀᴇᴀᴅʏ Sᴛʀᴇᴀᴍɪɴɢ❗**")
         elif call_status == "PAUSED":
             await call.resume_stream(chat_id)
-            return await message.reply_text("**🔊 Stream Resumed❗**")
+            return await message.reply_text("**🔊 Sᴛʀᴇᴀᴍ Rᴇsᴜᴍᴇᴅ❗**")
         else:
             return
     except Exception as e:
@@ -1127,7 +1127,7 @@ async def skip_and_change_stream(client, message):
     try:
         call_status = await get_call_status(chat_id)
         if call_status == "IDLE" or call_status == "NOTHING":
-            return await bot.send_message(chat_id, "**❎ Nothing Streaming❗...**")
+            return await bot.send_message(chat_id, "**❎ Nᴏᴛʜɪɴɢ Sᴛʀᴇᴀᴍɪɴɢ❗...**")
         elif call_status == "PLAYING" or call_status == "PAUSED":
             stickers = [
                 "🌹",
@@ -1169,12 +1169,12 @@ async def stop_stream_and_leave_vc(client, message):
     try:
         call_status = await get_call_status(chat_id)
         if call_status == "NOTHING":
-            return await message.reply_text("**❎ Nothing Streaming❗**")
+            return await message.reply_text("**❎ Nᴏᴛʜɪɴɢ Sᴛʀᴇᴀᴍɪɴɢ❗**")
         elif call_status == "IDLE":
-            return await message.reply_text("**✅ Succesfully Left From VC❗**")
+            return await message.reply_text("**✅ Sᴜᴄᴄᴇsғᴜʟʟʏ Lᴇғᴛ Fʀᴏᴍ VC❗**")
         elif call_status == "PLAYING" or call_status == "PAUSED":
             await close_stream(chat_id)
-            return await message.reply_text("**❎ Stopped Stream & Left\nFrom VC❗...**")
+            return await message.reply_text("**❎ 𝐒ᴛᴏᴘᴘᴇᴅ 𝐒ᴛʀᴇᴀᴍ & 𝐋ᴇғᴛ\N𝐅ʀᴏᴍ 𝐕ᴄ  ❗...**")
         else:
             return
     except Exception as e:
@@ -1228,7 +1228,7 @@ async def git_repo_link(client, message):
         [
             [
                 InlineKeyboardButton(
-                    text="🌺 Open Repository Link 🦋",
+                    text="🌺 𝐎ᴘᴇɴ 𝐑ᴇᴘᴏsɪᴛᴏʀʏ 𝐋ɪɴᴋ 🦋",
                     url="https://github.com/IamDvis/DV-MUSIC-V2",
                 )
             ],
