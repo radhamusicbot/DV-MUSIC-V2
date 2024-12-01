@@ -243,29 +243,33 @@ async def paste_queue(content):
 @bot.on_message(cdx("start") & pyrofl.private)
 async def start_message_private(client, message):
     mention = message.from_user.mention
-    caption = f"""**➻ Hello, {mention}
+    caption = f"""**➻ Hello, {mention}**
 
-🥀 I am An ≽ Advanced ≽ High Quality
-Bot, I Can Stream 🌿 Audio & Video In
-Your ♚ Channel And Group.
+🌟 **Hey Amazing People!**
 
-🐬 Must Click ❥ Open Command List
-Button ⋟ To Get More Info's 🦋 About
-My All Commands.
+I’m your **Next-Level**, **High-Quality Bot**, here to deliver **seamless Audio & Video Streaming** in your Groups and Channels.
 
-💐 Feel Free ≽ To Use Me › And Share
-With Your ☛ Other Friends.**"""
+🎯 Unlock My Full Potential:
+Tap the **Help Command** button to explore my **exclusive features** and **pro-level commands**.
+
+💎 Why I’m Your Perfect Choice?
+
+  ❥  🎵 **Crystal-Clear Audio**
+  ❥  🎥 **HD Video Playback**
+  ❥  ⚡ **Blazing Fast Performance**
+
+💬 **Use me anytime and share** the experience with your friends. Let’s make every moment unforgettable! 🚀"""
     buttons = InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton(
-                    text="🥀 Add Me In Your Chat ✨",
+                    text="• ᴧᴅᴅ мᴇ ʙᴧʙʏ •",
                     url=f"https://t.me/{bot.me.username}?startgroup=true",
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="🌺 Open Command List 🌷",
+                    text="ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs",
                     callback_data="open_command_list",
                 )
             ],
@@ -325,29 +329,33 @@ Only in Channels/Groups."""
 @bot.on_callback_query(rgx("back_to_home"))
 async def back_to_home_menu(client, query):
     mention = query.from_user.mention
-    caption = f"""**➻ Hello, {mention}
+    caption = f"""**➻ Hello, {mention}**
 
-🥀 I am An ≽ Advanced ≽ High Quality
-Bot, I Can Stream 🌿 Audio & Video In
-Your ♚ Channel And Group.
+🌟 **Hey Amazing People!**
 
-🐬 Must Click ❥ Open Command List
-Button ⋟ To Get More Info's 🦋 About
-My All Commands.
+I’m your **Next-Level**, **High-Quality Bot**, here to deliver **seamless Audio & Video Streaming** in your Groups and Channels.
 
-💐 Feel Free ≽ To Use Me › And Share
-With Your ☛ Other Friends.**"""
+🎯 Unlock My Full Potential:
+Tap the **Help Command** button to explore my **exclusive features** and **pro-level commands**.
+
+💎 Why I’m Your Perfect Choice?
+
+  ❥  🎵 **Crystal-Clear Audio**
+  ❥  🎥 **HD Video Playback**
+  ❥  ⚡ **Blazing Fast Performance**
+
+💬 **Use me anytime and share** the experience with your friends. Let’s make every moment unforgettable! 🚀"""
     buttons = InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton(
-                    text="🥀 Add Me In Your Chat ✨",
+                    text="• ᴧᴅᴅ мᴇ ʙᴧʙʏ •",
                     url=f"https://t.me/{bot.me.username}?startgroup=true",
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="🌺 Open Command List 🌷",
+                    text="ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs",
                     callback_data="open_command_list",
                 )
             ],
@@ -634,23 +642,27 @@ async def stream_logger(
             except Exception:
                 requested_by = user.title
             if position:
-                caption = f"""**✅ Added To Queue At :** `#{position}`
+                caption = f"""**✅ 𝐀ᴅᴅᴇᴅ 𝐓ᴏ 𝐐ᴜᴇᴜᴇ 𝐀ᴛ :** `#{position}`
 
-**🥀 Title:** {title}
-**🐬 Duration:** {duration}
-**🦋 Stream Type:** {stream_type}
-**🌺 Chat Name:** {chat_name}
-**🌼 Chat Link:** {chat_link}
-**👾 Requested By:** {requested_by}"""
+**❍ Tɪᴛʟᴇ** {title}
+**❍ Dᴜʀᴀᴛɪᴏɴ :** {duration}
+**❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ:** {stream_type}
+**❍ Cʜᴀᴛ Nᴀᴍᴇ:** {chat_name}
+**❍ Cʜᴀᴛ Lɪɴᴋ:** {chat_link}
+**❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}
+
+❍ 𝖩ᴏɪɴ ➛ [**sᴜᴘᴘᴏꝛᴛ**](https://t.me/+7ehnJA3aMb84OGNl)"""
             else:
-                caption = f"""**✅ Started Streaming On VC.**
+                caption = f"""**✅ 𝐒ᴛᴀʀᴛᴇᴅ 𝐒ᴛʀᴇᴀᴍɪɴɢ 𝐎ɴ 𝐕ᴄ.**
 
-**🥀 Title:** {title}
-**🐬 Duration:** {duration}
-**🦋 Stream Type:** {stream_type}
-**🌺 Chat Name:** {chat_name}
-**🌼 Chat Link:** {chat_link}
-**👾 Requested By:** {requested_by}"""
+**❍ Tɪᴛʟᴇ** {title}
+**❍ Dᴜʀᴀᴛɪᴏɴ :** {duration}
+**❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ:** {stream_type}
+**❍ Cʜᴀᴛ Nᴀᴍᴇ:** {chat_name}
+**❍ Cʜᴀᴛ Lɪɴᴋ:** {chat_link}
+**❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}
+
+❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛ @EraVibesXbot"""
             try:
                 await bot.send_photo(LOG_GROUP_ID, photo=thumbnail, caption=caption)
             except Exception:
@@ -665,7 +677,7 @@ async def change_stream(chat_id):
     if queued:
         queued.pop(0)
     if not queued:
-        await bot.send_message(chat_id, "**❎ Queue is Empty, So Left\nFrom VC❗...**")
+        await bot.send_message(chat_id, "**❎ 𝐐ᴜᴇᴜᴇ 𝐈s 𝐄ᴍᴘᴛʏ 𝐒ᴏ 𝐋ᴇғᴛ\n𝐅ʀᴏᴍ 𝐕ᴄ❗...**")
         return await close_stream(chat_id)
 
     title = queued[0].get("title")
@@ -703,12 +715,14 @@ async def change_stream(chat_id):
         )
 
     await call.play(chat_id, stream_media, config=call_config)
-    caption = f"""**✅ Started Streaming On VC.**
+    caption = f"""**✅ 𝐒ᴛᴀʀᴛᴇᴅ 𝐒ᴛʀᴇᴀᴍɪɴɢ 𝐎ɴ 𝐕ᴄ.**
 
-**🥀 Title:** {title}
-**🐬 Duration:** {duration}
-**🦋 Stream Type:** {stream_type}
-**👾 Requested By:** {requested_by}"""
+**❍ Tɪᴛʟᴇ:** {title}
+**❍ Dᴜʀᴀᴛɪᴏɴ :** {duration}
+**❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ:** {stream_type}
+**❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}
+
+❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛ @EraVibesXbot"""
     buttons = InlineKeyboardMarkup(
         [
             [
@@ -907,12 +921,14 @@ async def stream_audio_or_video(client, message):
                 position = await add_to_queue(
                     chat_id, user, title, duration, stream_file, stream_type, thumbnail
                 )
-                caption = f"""**✅ Added To Queue At :** `#{position}`
+                caption = f"""**✅ 𝐀ᴅᴅᴇᴅ 𝐓ᴏ 𝐐ᴜᴇᴜᴇ 𝐀ᴛ :** `#{position}`
 
-**🥀 Title:** {title}
-**🐬 Duration:** {duration}
-**🦋 Stream Type:** {stream_type}
-**👾 Requested By:** {requested_by}"""
+**❍ Tɪᴛʟᴇ:** {title}
+**❍ Dᴜʀᴀᴛɪᴏɴ :** {duration}
+**❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ:** {stream_type}
+**❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}
+
+❍ 𝖩ᴏɪɴ ➛ [**sᴜᴘᴘᴏꝛᴛ**](https://t.me/+7ehnJA3aMb84OGNl)"""
                 await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
                 await stream_logger(
                     chat_id, user, title, duration, stream_type, thumbnail, position
@@ -1014,12 +1030,14 @@ async def stream_audio_or_video(client, message):
                 position = await add_to_queue(
                     chat_id, user, title, duration, stream_file, stream_type, thumbnail
                 )
-                caption = f"""**✅ Started Streaming On VC.**
+                caption = f"""**✅ 𝐒ᴛᴀʀᴛᴇᴅ 𝐒ᴛʀᴇᴀᴍɪɴɢ 𝐎ɴ 𝐕ᴄ.**
 
-**🥀 Title:** {title}
-**🐬 Duration:** {duration}
-**🦋 Stream Type:** {stream_type}
-**👾 Requested By:** {requested_by}"""
+**❍ Tɪᴛʟᴇ:** {title}
+**❍ Dᴜʀᴀᴛɪᴏɴ :** {duration}
+**❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ:** {stream_type}
+**❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}
+
+❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛ @EraVibesXbot"""
                 await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
                 await stream_logger(
                     chat_id, user, title, duration, stream_type, thumbnail
@@ -1188,14 +1206,22 @@ async def git_repo_link(client, message):
     else:
         mention = message.from_user.mention
     if message.chat.type == ChatType.PRIVATE:
-        caption = f"""**➻ Hello, {mention}
-    
-🥀 I am An ≽ Advanced ≽ High Quality
-Bot, I Can Stream 🌿 Audio & Video In
-Your ♚ Channel And Group.
+        caption = f"""**➻ Hello, {mention}**
 
-🐬 Feel Free ≽ To Use Me › And Share
-With Your ☛ Other Friends.**"""
+🌟 **Hey Amazing People!**
+
+I’m your **Next-Level**, **High-Quality Bot**, here to deliver **seamless Audio & Video Streaming** in your Groups and Channels.
+
+🎯 Unlock My Full Potential:
+Tap the **Help Command** button to explore my **exclusive features** and **pro-level commands**.
+
+💎 Why I’m Your Perfect Choice?
+
+  ❥  🎵 **Crystal-Clear Audio**
+  ❥  🎥 **HD Video Playback**
+  ❥  ⚡ **Blazing Fast Performance**
+
+💬 **Use me anytime and share** the experience with your friends. Let’s make every moment unforgettable! 🚀"""
     else:
         caption = f"**➻ Hello, {mention}.**"
     buttons = InlineKeyboardMarkup(
