@@ -10,6 +10,15 @@ Dvis Music is an advanced & powerful multi-featured Telegram vc streaming bot.
 
 <p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/IamDvis/DV-MUSIC-V2"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
+<h3 align="center">
+    ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ᴋᴏʏᴇʙ 」─
+</h3>
+
+<h3 align="center">
+    
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?name=dv-filestore&type=git&repository=IamDvis%2FDV-FILESTORE&branch=main&builder=dockerfile&env%5BAPI_ID%5D=&env%5BAPI_HASH%5D=&env%5BBOT_TOKEN%5D=&env%5BMONGO_DB_URI%5D=&env%5BLOG_CHANNEL%5D=&env%5BOWNER_ID%5D=&env%5BSTART_IMAGE_URL%5D=&env%5BSTRING_SESSION%5D=&env%5BURL%5D=&ports=8080%3Bhttp%3B%2F)
+
+</h3>
 
 
 <h2>🤖 Dvis Music Info</h2>
