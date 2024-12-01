@@ -1174,7 +1174,7 @@ async def stop_stream_and_leave_vc(client, message):
             return await message.reply_text("**✅ Sᴜᴄᴄᴇsғᴜʟʟʏ Lᴇғᴛ Fʀᴏᴍ VC❗**")
         elif call_status == "PLAYING" or call_status == "PAUSED":
             await close_stream(chat_id)
-            return await message.reply_text("**❎ 𝐒ᴛᴏᴘᴘᴇᴅ 𝐒ᴛʀᴇᴀᴍ & 𝐋ᴇғᴛ\N𝐅ʀᴏᴍ 𝐕ᴄ  ❗...**")
+            return await message.reply_text("**❎ 𝐒ᴛᴏᴘᴘᴇᴅ 𝐒ᴛʀᴇᴀᴍ & 𝐋ᴇғᴛ\n𝐅ʀᴏᴍ 𝐕ᴄ  ❗...**")
         else:
             return
     except Exception as e:
