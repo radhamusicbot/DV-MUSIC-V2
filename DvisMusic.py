@@ -243,22 +243,22 @@ async def paste_queue(content):
 @bot.on_message(cdx("start") & pyrofl.private)
 async def start_message_private(client, message):
     mention = message.from_user.mention
-    caption = f"""**➻ Hello, {mention}**
-
-🌟 **Hey Amazing People!**
-
-I’m your **Next-Level**, **High-Quality Bot**, here to deliver **seamless Audio & Video Streaming** in your Groups and Channels.
-
-🎯 Unlock My Full Potential:
-Tap the **Help Command** button to explore my **exclusive features** and **pro-level commands**.
-
-💎 Why I’m Your Perfect Choice?
-
-  ❥  🎵 **Crystal-Clear Audio**
-  ❥  🎥 **HD Video Playback**
-  ❥  ⚡ **Blazing Fast Performance**
-
-💬 **Use me anytime and share** the experience with your friends. Let’s make every moment unforgettable! 🚀"""
+    caption = f"""
+╭───────────────────⦿‍
+│❍ • ʜᴇʏ  {mention} •‍
+│❍ • ɪ ᴀᴍ  @{bot.me.username}•‍
+├───────────────────⦿‍
+│❍ • ɪ ʜᴀᴠᴇ sᴘᴇᴄɪᴀʟ ғᴇᴀᴛᴜʀᴇs •‍
+├───────────────────⦿‍
+│❍ • ᴀ ғᴀsᴛ & ᴘᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴜsɪᴄ‍
+│  ʙᴏᴛ ᴡɪᴛʜ ᴀᴡᴇsᴏᴍᴇ ғᴇᴀᴛᴜʀᴇs‍
+│❍ • ʏᴏᴜ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜꜱɪᴄ + ᴠɪᴅᴇᴏ •‍
+│❍ • ʙᴇsᴛ ǫᴜɪʟɪᴛʏ ᴍᴜsɪᴄ sᴏᴜɴᴅ •‍
+│❍ • ɴᴏ ʟᴀɢs + ɴᴏ ᴀᴅs •‍
+│❍ • 24x7 ᴏɴʟɪɴᴇ sᴜᴘᴘᴏʀᴛ •‍
+├───────────────────⦿‍
+│    [✰ 𝖮ᴡ፝֠֩𝛈𝛆ʀ  ✰](https://t.me/DvisDmBot)
+╰───────────────────⦿"""
     buttons = InlineKeyboardMarkup(
         [
             [
@@ -269,7 +269,7 @@ Tap the **Help Command** button to explore my **exclusive features** and **pro-l
             ],
             [
                 InlineKeyboardButton(
-                    text="ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs",
+                    text="💌 𝖧ᴇʟᴘ $ 𝖢ᴏᴍᴍᴀɴᴅs 💌",
                     callback_data="open_command_list",
                 )
             ],
@@ -329,22 +329,22 @@ Only in Channels/Groups."""
 @bot.on_callback_query(rgx("back_to_home"))
 async def back_to_home_menu(client, query):
     mention = query.from_user.mention
-    caption = f"""**➻ Hello, {mention}**
-
-🌟 **Hey Amazing People!**
-
-I’m your **Next-Level**, **High-Quality Bot**, here to deliver **seamless Audio & Video Streaming** in your Groups and Channels.
-
-🎯 Unlock My Full Potential:
-Tap the **Help Command** button to explore my **exclusive features** and **pro-level commands**.
-
-💎 Why I’m Your Perfect Choice?
-
-  ❥  🎵 **Crystal-Clear Audio**
-  ❥  🎥 **HD Video Playback**
-  ❥  ⚡ **Blazing Fast Performance**
-
-💬 **Use me anytime and share** the experience with your friends. Let’s make every moment unforgettable! 🚀"""
+    caption = f"""
+╭───────────────────⦿‍
+│❍ • ʜᴇʏ  {mention} •‍
+│❍ • ɪ ᴀᴍ  @{bot.me.username}•‍
+├───────────────────⦿‍
+│❍ • ɪ ʜᴀᴠᴇ sᴘᴇᴄɪᴀʟ ғᴇᴀᴛᴜʀᴇs •‍
+├───────────────────⦿‍
+│❍ • ᴀ ғᴀsᴛ & ᴘᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴜsɪᴄ‍
+│  ʙᴏᴛ ᴡɪᴛʜ ᴀᴡᴇsᴏᴍᴇ ғᴇᴀᴛᴜʀᴇs‍
+│❍ • ʏᴏᴜ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜꜱɪᴄ + ᴠɪᴅᴇᴏ •‍
+│❍ • ʙᴇsᴛ ǫᴜɪʟɪᴛʏ ᴍᴜsɪᴄ sᴏᴜɴᴅ •‍
+│❍ • ɴᴏ ʟᴀɢs + ɴᴏ ᴀᴅs •‍
+│❍ • 24x7 ᴏɴʟɪɴᴇ sᴜᴘᴘᴏʀᴛ •‍
+├───────────────────⦿‍
+│    [✰ 𝖮ᴡ፝֠֩𝛈𝛆ʀ  ✰](https://t.me/DvisDmBot)
+╰───────────────────⦿"""
     buttons = InlineKeyboardMarkup(
         [
             [
@@ -717,10 +717,10 @@ async def change_stream(chat_id):
     await call.play(chat_id, stream_media, config=call_config)
     caption = f"""**✅ 𝐒ᴛᴀʀᴛᴇᴅ 𝐒ᴛʀᴇᴀᴍɪɴɢ 𝐎ɴ 𝐕ᴄ.**
 
-**❍ Tɪᴛʟᴇ:** {title}
-**❍ Dᴜʀᴀᴛɪᴏɴ :** {duration}
-**❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ:** {stream_type}
-**❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}
+**❍ Tɪᴛʟᴇ ➥ ** {title}
+**❍ Dᴜʀᴀᴛɪᴏɴ ➥ ** {duration}
+**❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ ➥ ** {stream_type}
+**❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥ ** {requested_by}
 
 ❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛ @EraVibesXbot"""
     buttons = InlineKeyboardMarkup(
@@ -923,12 +923,12 @@ async def stream_audio_or_video(client, message):
                 )
                 caption = f"""**✅ 𝐀ᴅᴅᴇᴅ 𝐓ᴏ 𝐐ᴜᴇᴜᴇ 𝐀ᴛ :** `#{position}`
 
-**❍ Tɪᴛʟᴇ:** {title}
-**❍ Dᴜʀᴀᴛɪᴏɴ :** {duration}
-**❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ:** {stream_type}
-**❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}
+**❍ Tɪᴛʟᴇ ➥ ** {title}
+**❍ Dᴜʀᴀᴛɪᴏɴ ➥ ** {duration}
+**❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ ➥ ** {stream_type}
+**❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥ ** {requested_by}
 
-❍ 𝖩ᴏɪɴ ➛ [**sᴜᴘᴘᴏꝛᴛ**](https://t.me/+7ehnJA3aMb84OGNl)"""
+❍ 𝖩ᴏɪɴ ➛ **[sᴜᴘᴘᴏꝛᴛ](https://t.me/+7ehnJA3aMb84OGNl)**"""
                 await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
                 await stream_logger(
                     chat_id, user, title, duration, stream_type, thumbnail, position
@@ -1032,10 +1032,10 @@ async def stream_audio_or_video(client, message):
                 )
                 caption = f"""**✅ 𝐒ᴛᴀʀᴛᴇᴅ 𝐒ᴛʀᴇᴀᴍɪɴɢ 𝐎ɴ 𝐕ᴄ.**
 
-**❍ Tɪᴛʟᴇ:** {title}
-**❍ Dᴜʀᴀᴛɪᴏɴ :** {duration}
-**❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ:** {stream_type}
-**❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}
+**❍ Tɪᴛʟᴇ ➥ ** {title}
+**❍ Dᴜʀᴀᴛɪᴏɴ ➥ ** {duration}
+**❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ ➥ ** {stream_type}
+**❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥ ** {requested_by}
 
 ❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛ @EraVibesXbot"""
                 await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
@@ -1206,22 +1206,22 @@ async def git_repo_link(client, message):
     else:
         mention = message.from_user.mention
     if message.chat.type == ChatType.PRIVATE:
-        caption = f"""**➻ Hello, {mention}**
-
-🌟 **Hey Amazing People!**
-
-I’m your **Next-Level**, **High-Quality Bot**, here to deliver **seamless Audio & Video Streaming** in your Groups and Channels.
-
-🎯 Unlock My Full Potential:
-Tap the **Help Command** button to explore my **exclusive features** and **pro-level commands**.
-
-💎 Why I’m Your Perfect Choice?
-
-  ❥  🎵 **Crystal-Clear Audio**
-  ❥  🎥 **HD Video Playback**
-  ❥  ⚡ **Blazing Fast Performance**
-
-💬 **Use me anytime and share** the experience with your friends. Let’s make every moment unforgettable! 🚀"""
+        caption = f"""
+╭───────────────────⦿‍
+│❍ • ʜᴇʏ  {mention} •‍
+│❍ • ɪ ᴀᴍ  @{bot.me.username}•‍
+├───────────────────⦿‍
+│❍ • ɪ ʜᴀᴠᴇ sᴘᴇᴄɪᴀʟ ғᴇᴀᴛᴜʀᴇs •‍
+├───────────────────⦿‍
+│❍ • ᴀ ғᴀsᴛ & ᴘᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴜsɪᴄ‍
+│  ʙᴏᴛ ᴡɪᴛʜ ᴀᴡᴇsᴏᴍᴇ ғᴇᴀᴛᴜʀᴇs‍
+│❍ • ʏᴏᴜ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜꜱɪᴄ + ᴠɪᴅᴇᴏ •‍
+│❍ • ʙᴇsᴛ ǫᴜɪʟɪᴛʏ ᴍᴜsɪᴄ sᴏᴜɴᴅ •‍
+│❍ • ɴᴏ ʟᴀɢs + ɴᴏ ᴀᴅs •‍
+│❍ • 24x7 ᴏɴʟɪɴᴇ sᴜᴘᴘᴏʀᴛ •‍
+├───────────────────⦿‍
+│    [✰ 𝖮ᴡ፝֠֩𝛈𝛆ʀ  ✰](https://t.me/DvisDmBot)
+╰───────────────────⦿"""
     else:
         caption = f"**➻ Hello, {mention}.**"
     buttons = InlineKeyboardMarkup(
