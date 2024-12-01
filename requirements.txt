@@ -1,5 +1,5 @@
 heroku3
-flask
+Flask==1.1.2
 #------------------x----------------
 aiofiles==24.1.0
 aiohttp==3.10.3
