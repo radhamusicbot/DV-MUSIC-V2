@@ -134,6 +134,9 @@ bot = Client(
 call = PyTgCalls(app)
 call_config = GroupCallConfig(auto_start=False)
 
+mongo_async_cli = _mongo_async_(MONGO_DB_URL)
+mongodb = mongo_async_cli.dvisxdb
+
 
 # store start time
 __start_time__ = time.time()
