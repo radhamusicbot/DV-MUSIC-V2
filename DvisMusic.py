@@ -14,6 +14,7 @@ from logging.handlers import RotatingFileHandler
 
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError
+from motor.motor_asyncio import AsyncIOMotorClient as _mongo_async_
 
 from pyrogram import Client, filters as pyrofl
 from pytgcalls import PyTgCalls, filters as pytgfl
@@ -26,6 +27,7 @@ from ntgcalls import TelegramServerError
 from pyrogram.enums import ChatMemberStatus, ChatType
 from pyrogram.errors import (
     ChatAdminRequired,
+    FloodWait,
     InviteRequestSent,
     UserAlreadyParticipant,
     UserNotParticipant,
@@ -170,9 +172,15 @@ async def main():
     if not STRING_SESSION:
         LOGGER.info("❌ 'STRING_SESSION' - Not Found ‼️")
         sys.exit()
-    # if not MONGO_DB_URL:
-    # LOGGER.info("'MONGO_DB_URL' - Not Found !!")
-    # sys.exit()
+
+    if not MONGO_DB_URL:
+        LOGGER.info("'MONGO_DB_URL' - Not Found !!")
+        sys.exit()
+    try:
+        await mongo_async_cli.admin.command('ping')
+    except Exception:
+        LOGGER.info("❌ 'MONGO_DB_URL' - Not Valid !!")
+        sys.exit()
     LOGGER.info("✅ Required Variables Are Collected.")
     await asyncio.sleep(1)
     LOGGER.info("🌀 Starting All Clients ...")
@@ -190,7 +198,7 @@ async def main():
     try:
         await app.start()
     except Exception as e:
-        LOGGER.info(f"🚫 Assistant Error: {e}")
+        LOGGER.info(f"🚫 Assɪsᴛᴀɴᴛ Eʀʀᴏʀ: {e}")
         sys.exit()
     try:
         await app.join_chat("net_pro_max")
@@ -215,7 +223,7 @@ async def main():
     await idle()
 
 
-# Some Functions For Paste ...!!
+# Some Required Functions ...!!
 
 
 def _netcat(host, port, content):
@@ -235,6 +243,89 @@ async def paste_queue(content):
     loop = asyncio.get_running_loop()
     link = await loop.run_in_executor(None, partial(_netcat, "ezup.dev", 9999, content))
     return link
+
+
+
+def get_readable_time(seconds: int) -> str:
+    count = 0
+    ping_time = ""
+    time_list = []
+    time_suffix_list = ["s", "m", "h", "days"]
+    while count < 4:
+        count += 1
+        if count < 3:
+            remainder, result = divmod(seconds, 60)
+        else:
+            remainder, result = divmod(seconds, 24)
+        if seconds == 0 and remainder == 0:
+            break
+        time_list.append(int(result))
+        seconds = int(remainder)
+    for i in range(len(time_list)):
+        time_list[i] = str(time_list[i]) + time_suffix_list[i]
+    if len(time_list) == 4:
+        ping_time += time_list.pop() + ", "
+    time_list.reverse()
+    ping_time += ":".join(time_list)
+    return ping_time
+
+
+
+
+
+# Mongo Database Functions
+
+chatsdb = mongodb.chatsdb
+usersdb = mongodb.usersdb
+
+
+
+
+# Served Chats
+
+async def is_served_chat(chat_id: int) -> bool:
+    chat = await chatsdb.find_one({"chat_id": chat_id})
+    if not chat:
+        return False
+    return True
+
+
+async def get_served_chats() -> list:
+    chats_list = []
+    async for chat in chatsdb.find({"chat_id": {"$lt": 0}}):
+        chats_list.append(chat)
+    return chats_list
+
+
+async def add_served_chat(chat_id: int):
+    is_served = await is_served_chat(chat_id)
+    if is_served:
+        return
+    return await chatsdb.insert_one({"chat_id": chat_id})
+
+
+
+# Served Users
+
+async def is_served_user(user_id: int) -> bool:
+    user = await usersdb.find_one({"user_id": user_id})
+    if not user:
+        return False
+    return True
+
+
+async def get_served_users() -> list:
+    users_list = []
+    async for user in usersdb.find({"user_id": {"$gt": 0}}):
+        users_list.append(user)
+    return users_list
+
+
+async def add_served_user(user_id: int):
+    is_served = await is_served_user(user_id)
+    if is_served:
+        return
+    return await usersdb.insert_one({"user_id": user_id})
 
 
 # Callback & Message Queries
@@ -983,11 +1074,11 @@ async def stream_audio_or_video(client, message):
                         except Exception as e:
                             try:
                                 return await aux.edit_text(
-                                    f"**🚫 Assistant Error:** `{e}`"
+                                    f"**🚫 Assɪsᴛᴀɴᴛ Eʀʀᴏʀ:** `{e}`"
                                 )
                             except Exception:
                                 pass
-                            LOGGER.info(f"🚫 Assistant Error: {e}")
+                            LOGGER.info(f"🚫 Assɪsᴛᴀɴᴛ Eʀʀᴏʀ: {e}")
                             return
                     try:
                         await asyncio.sleep(1)
@@ -998,11 +1089,11 @@ async def stream_audio_or_video(client, message):
                         except Exception as e:
                             try:
                                 return await aux.edit_text(
-                                    f"**🚫 Approve Error:** `{e}`"
+                                    f"**🚫 Aᴘᴘʀᴏᴠᴇ Eʀʀᴏʀ:** `{e}`"
                                 )
                             except Exception:
                                 pass
-                            LOGGER.info(f"🚫 Approve Error: {e}")
+                            LOGGER.info(f"🚫 Aᴘᴘʀᴏᴠᴇ Eʀʀᴏʀ: {e}")
                             return
                     except UserAlreadyParticipant:
                         pass
@@ -1021,7 +1112,7 @@ async def stream_audio_or_video(client, message):
                     try:
                         return await aux.edit_text(f"**⚠️ Nᴏ Aᴄᴛɪᴠᴇ VC❗...**")
                     except Exception:
-                        LOGGER.info(f"⚠️ No Active VC ({chat_id})❗... ")
+                        LOGGER.info(f"⚠️ Nᴏ Aᴄᴛɪᴠᴇ VC ({chat_id})❗... ")
                         return
             except TelegramServerError:
                 return await aux.edit_text("**⚠️ Tᴇʟᴇɢʀᴀᴍ Sᴇʀᴠᴇʀ Issᴜᴇ❗...**")
@@ -1044,9 +1135,9 @@ async def stream_audio_or_video(client, message):
                 )
             except Exception as e:
                 try:
-                    return await aux.edit(f"**Send Error:** `{e}`")
+                    return await aux.edit(f"**Sᴇɴᴅ Eʀʀᴏʀ:** `{e}`")
                 except Exception:
-                    LOGGER.info(f"Send Error: {e}")
+                    LOGGER.info(f"Sᴇɴᴅ Eʀʀᴏʀ: {e}")
                     return
         else:
             return
@@ -1057,9 +1148,9 @@ async def stream_audio_or_video(client, message):
         return
     except Exception as e:
         try:
-            return await aux.edit_text(f"**Stream Error:** `{e}`")
+            return await aux.edit_text(f"**Sᴛʀᴇᴀᴍ Eʀʀᴏʀ:** `{e}`")
         except Exception:
-            LOGGER.info(f"🚫 Stream Error: {e}")
+            LOGGER.info(f"🚫 Sᴛʀᴇᴀᴍ Eʀʀᴏʀ: {e}")
             return
 
 
@@ -1084,9 +1175,9 @@ async def pause_running_stream_on_vc(client, message):
             return
     except Exception as e:
         try:
-            await bot.send_message(chat_id, f"**🚫 Stream Pause Error:** `{e}`")
+            await bot.send_message(chat_id, f"**🚫 Sᴛʀᴇᴀᴍ Pᴀᴜsᴇ Eʀʀᴏʀ:** `{e}`")
         except Exception:
-            LOGGER.info(f"🚫 Stream Pause Error: {e}")
+            LOGGER.info(f"🚫 Sᴛʀᴇᴀᴍ Pᴀᴜsᴇ Eʀʀᴏʀ: {e}")
             return
 
 
@@ -1199,6 +1290,15 @@ async def stream_end_handler(_, update: Update):
     return await change_stream(chat_id)
 
 
+@bot.on_message(cdx("ping") & ~pyrofl.bot)
+async def check_sping(client, message):
+    start = datetime.now()
+    end = datetime.now()
+    ms = (end - start).microseconds / 1000
+    m = await message.reply_text("**🤖 𝐏ɪɴɢ...!!**")
+    await m.edit(f"**🤖 𝐏ɪɴɢᴇᴅ...!!\n𝐋ᴀᴛᴇɴᴄʏ:** `{ms}` ms") 
+
+
 @bot.on_message(cdx(["repo", "repository"]) & ~pyrofl.bot)
 async def git_repo_link(client, message):
     if message.sender_chat:
@@ -1292,6 +1392,159 @@ async def update_repo_latest(client, message):
     os.system(f"kill -9 {os.getpid()} && python3 -m DvisMusicr")
     sys.exit()
     return
+
+@bot.on_message(cdx(["stats"]) & ~pyrofl.private)
+async def check_bot_stats(client, message):
+    try:
+        await message.delete()
+    except:
+        pass
+    photo = START_IMAGE_URL
+    caption = "**⏤͟͞DVIS MUSIC STATS ༗**"
+    buttons = InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton(
+                    text="🐬 Mʏ Sᴛᴀᴛs",
+                    callback_data="check_stats",
+                )
+            ],
+            [
+                InlineKeyboardButton(
+                    text="🗑️ Close",
+                    callback_data="force_close",
+                )
+            ]
+        ]
+    )
+    return await message.reply_photo(
+        photo=photo,
+        caption=caption,
+        reply_markup=buttons,
+    )
+
+
+
+@bot.on_callback_query(rgx("check_stats"))
+async def check_total_stats(client, query):
+    try:
+        user_id = query.from_user.id
+        runtime = __start_time__
+        boot_time = int(time.time() - runtime)
+        uptime = get_readable_time((boot_time))
+        served_chats = len(await get_served_chats())
+        served_users = len(await get_served_users())
+        activ_chats = len(ACTIVE_MEDIA_CHATS)
+        audio_chats = len(ACTIVE_AUDIO_CHATS)
+        video_chats = len(ACTIVE_VIDEO_CHATS)
+        
+        return await query.answer(
+            f"""⏱️ 𝐁ᴏᴛ 𝐑ᴜɴ 𝐓ɪᴍᴇ  [Boot]
+☛ {uptime}
+
+🔴 Sᴇʀᴠᴇᴅ Cʜᴀᴛs ➥ {served_chats}
+🔵 Served Users ➥ {served_users}
+
+🦋 𝐓ᴏᴛᴀʟ 𝐀ᴄᴛɪᴠᴇ 𝐂ʜᴀᴛs [{activ_chats}]
+✿⋟ Aᴜᴅɪᴏ Sᴛʀᴇᴀᴍ ➥ {audio_chats}
+✿⋟ Vɪᴅᴇᴏ Sᴛʀᴇᴀᴍ ➥ {video_chats}""",
+            show_alert=True
+        )
+    except Exception as e:
+        LOGGER.info(f"🚫 Stats Error: {e}")
+        pass
+
+
+@bot.on_message(cdx(["broadcast", "gcast"]) & bot_owner_only)
+async def broadcast_message(client, message):
+    try:
+        await message.delete()
+    except:
+        pass
+    if message.reply_to_message:
+        x = message.reply_to_message.id
+        y = message.chat.id
+    else:
+        if len(message.command) < 2:
+            return await message.reply_text("**♻️ Usage**:\n/broadcast [Message] Or [Reply To a Message]")
+        query = message.text.split(None, 1)[1]
+        if "-pin" in query:
+            query = query.replace("-pin", "")
+        if "-nobot" in query:
+            query = query.replace("-nobot", "")
+        if "-pinloud" in query:
+            query = query.replace("-pinloud", "")
+        if "-user" in query:
+            query = query.replace("-user", "")
+        if query == "":
+            return await message.reply_text("**🥀 Pʟᴇᴀsᴇ Gɪᴠᴇ Mᴇ Sᴏᴍᴇ Tᴇxᴛ Tᴏ Bʀᴏᴀᴅᴄᴀsᴛ❗...**")
+    
+    # Bot broadcast inside chats
+    if "-nobot" not in message.text:
+        sent = 0
+        pin = 0
+        chats = []
+        schats = await get_served_chats()
+        for chat in schats:
+            chats.append(int(chat["chat_id"]))
+        for i in chats:
+            try:
+                m = (
+                    await bot.forward_messages(i, y, x)
+                    if message.reply_to_message
+                    else await bot.send_message(i, text=query)
+                )
+                if "-pin" in message.text:
+                    try:
+                        await m.pin(disable_notification=True)
+                        pin += 1
+                    except Exception:
+                        continue
+                elif "-pinloud" in message.text:
+                    try:
+                        await m.pin(disable_notification=False)
+                        pin += 1
+                    except Exception:
+                        continue
+                sent += 1
+            except FloodWait as e:
+                flood_time = int(e.value)
+                if flood_time > 200:
+                    continue
+                await asyncio.sleep(flood_time)
+            except Exception:
+                continue
+        try:
+            await message.reply_text("✅ 𝐁ʀᴏᴀᴅᴄᴀ𝐬ᴛ 𝐌ᴇ𝐬𝐬ᴀɢᴇ𝐬 𝐈ɴ **{0}**  𝐂ʜᴀᴛ𝐬 𝐖ɪᴛʜ **{1}** 𝐏ɪɴ𝐬 𝐅ʀᴏᴍ 𝐁ᴏᴛ.".format(sent, pin))
+        except:
+            pass
+
+    # Bot broadcasting to users
+    if "-user" in message.text:
+        susr = 0
+        served_users = []
+        susers = await get_served_users()
+        for user in susers:
+            served_users.append(int(user["user_id"]))
+        for i in served_users:
+            try:
+                m = (
+                    await bot.forward_messages(i, y, x)
+                    if message.reply_to_message
+                    else await bot.send_message(i, text=query)
+                )
+                susr += 1
+            except FloodWait as e:
+                flood_time = int(e.value)
+                if flood_time > 200:
+                    continue
+                await asyncio.sleep(flood_time)
+            except Exception:
+                pass
+        try:
+            await message.reply_text("✅ 𝐁ʀᴏᴀᴅᴄᴀ𝐬ᴛ 𝐌ᴇ𝐬𝐬ᴀɢᴇ𝐬 𝐓ᴏ  **{0}** 𝐔𝐬ᴇʀ𝐬.".format(susr))
+        except:
+            pass
 
 
 if __name__ == "__main__":
