@@ -29,7 +29,7 @@ Dvis Music is an advanced & powerful multi-featured Telegram vc streaming bot.
 
 **1. At First Copy & Paste Below Command.**
 
-```sudo apt install curl ffmpeg git nano python3-pip screen -y && cd && rm-rf DvisMusic && git clone https://github.com/IamDvis/DV-MUSIC-V2 && cd DV-MUSIC-V2 && pip3 install -r requirements.txt --force-reinstall &* screen -R DvisMusic```
+```sudo apt install curl ffmpeg git nano python3-pip screen -y && cd && rm-rf DV-MUSIC-V2 && git clone https://github.com/IamDvis/DV-MUSIC-V2 && cd DV-MUSIC-V2 && pip3 install -r requirements.txt --force-reinstall &* screen -R DvisMusic```
 
 
 **2. Now Run This Command & Add Your Variables.**
