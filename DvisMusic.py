@@ -388,18 +388,28 @@ async def start_message_private(client, message):
 
 @bot.on_callback_query(rgx("help_command_list"))
 async def open_command_list_alert(client, query):
-    caption = """**🥀 All Members Can Use:**
-/play - Stream Only Audio On VC.
-/vplay - Stream Audio With Video.
+    caption = """
+------------------x----------------
+✫ <b><u>ᴀʟʟ ᴍᴇᴍʙᴇʀs ᴄᴀɴ ᴜsᴇ</u></b> :
+  ● /play - Stream Only Audio On VC.
+  ● /vplay - Stream Audio With Video.
 
-**👾 Only For Chat Admins:**
-/pause - Pause Running Stream.
-/resume - Resume Paused Stream.
-/skip - Skip Current Stream To Next.
-/end - Stop Current Running Stream.
+✫ <b><u>ᴏɴʟʏ ғᴏʀ ᴄʜᴀᴛ ᴀᴅᴍɪɴs</u></b> :
+  ● /pause - Pause Running Stream.
+  ● /resume - Resume Paused Stream.
+  ● /skip - Skip Current Stream To Next.
+  ● /end - Stop Current Running Stream.
 
 **Note:** All Commands Will Work
-Only in Channels/Groups."""
+Only in Channels/Groups.
+------------------x----------------
+
+✫ <b><u>ᴏɴʟʏ ғᴏʀ ᴏᴡɴᴇʀ</u></b> :
+   ● /ping - Oᴡɴᴇʀs Nᴏᴡ
+   ● /stats - Oᴡɴᴇʀs Nᴏᴡ
+   ● /gcast - Oᴡɴᴇʀs Nᴏᴡ
+
+"""
     buttons = InlineKeyboardMarkup(
         [
             [
