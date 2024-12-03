@@ -175,10 +175,9 @@ async def main():
     if not STRING_SESSION:
         LOGGER.info("❌ 'STRING_SESSION' - Not Found ‼️")
         sys.exit()
-"""
     if not MONGO_DB_URL:
         LOGGER.info("'MONGO_DB_URL' - Not Found !!")
-        sys.exit()"""
+        sys.exit()
     try:
         await mongo_async_cli.admin.command('ping')
     except Exception:
