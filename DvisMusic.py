@@ -350,7 +350,7 @@ async def start_message_private(client, message):
 │❍ • ɴᴏ ʟᴀɢs + ɴᴏ ᴀᴅs •‍
 │❍ • 24x7 ᴏɴʟɪɴᴇ sᴜᴘᴘᴏʀᴛ •‍
 ├───────────────────⦿‍
-│      [✰ 𝖮ᴡ፝֠֩𝛈𝛆ʀ  ✰](https://t.me/DvisDmBot)
+│           [✰ 𝖮ᴡ፝֠֩𝛈𝛆ʀ  ✰](https://t.me/DvisDmBot)
 ╰───────────────────⦿"""
     buttons = InlineKeyboardMarkup(
         [
@@ -391,12 +391,12 @@ async def start_message_private(client, message):
 @bot.on_callback_query(rgx("help_command_list"))
 async def open_command_list_alert(client, query):
     caption = """
-------------------x----------------
-✫ <b><u>ᴀʟʟ ᴍᴇᴍʙᴇʀs ᴄᴀɴ ᴜsᴇ</u></b> :
+♡━━━━━━━━━━━━━━⚆ _ ⚆━━━━━━━━━━━━━♡ 
+**✫ ᴀʟʟ ᴍᴇᴍʙᴇʀs ᴄᴀɴ ᴜsᴇ :**
   ● /play - Stream Only Audio On VC.
   ● /vplay - Stream Audio With Video.
 
-✫ <b><u>ᴏɴʟʏ ғᴏʀ ᴄʜᴀᴛ ᴀᴅᴍɪɴs</u></b> :
+**✫ ᴏɴʟʏ ғᴏʀ ᴄʜᴀᴛ ᴀᴅᴍɪɴs :**
   ● /pause - Pause Running Stream.
   ● /resume - Resume Paused Stream.
   ● /skip - Skip Current Stream To Next.
@@ -404,9 +404,9 @@ async def open_command_list_alert(client, query):
 
 **Note:** All Commands Will Work
 Only in Channels/Groups.
-------------------x----------------
+♡━━━━━━━━━━━━━━⚆ _ ⚆━━━━━━━━━━━━━♡
 
-✫ <b><u>ᴏɴʟʏ ғᴏʀ ᴏᴡɴᴇʀ</u></b> :
+**✫ ᴏɴʟʏ ғᴏʀ ᴏᴡɴᴇʀ :**
    ● /ping - Oᴡɴᴇʀs Nᴏᴡ
    ● /stats - Oᴡɴᴇʀs Nᴏᴡ
    ● /gcast - Oᴡɴᴇʀs Nᴏᴡ
@@ -446,7 +446,7 @@ async def back_to_home_menu(client, query):
 │❍ • ɴᴏ ʟᴀɢs + ɴᴏ ᴀᴅs •‍
 │❍ • 24x7 ᴏɴʟɪɴᴇ sᴜᴘᴘᴏʀᴛ •‍
 ├───────────────────⦿‍
-│          [✰ 𝖮ᴡ፝֠֩𝛈𝛆ʀ  ✰](https://t.me/DvisDmBot)
+│               [✰ 𝖮ᴡ፝֠֩𝛈𝛆ʀ  ✰](https://t.me/DvisDmBot)
 ╰───────────────────⦿"""
     buttons = InlineKeyboardMarkup(
         [
