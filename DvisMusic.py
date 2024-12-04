@@ -329,6 +329,13 @@ async def add_served_user(user_id: int):
         return
     return await usersdb.insert_one({"user_id": user_id})
 
+# Extra
+async def fetch_song(name):
+    async with aiohttp.ClientSession() as s:  # This API Made By @C0DE_SEARCH On Telegram
+        async with s.get(f"https://song-teleservice.vercel.app/song?songName={name.replace(' ', '%20')}") as r: 
+            return await r.json() if r.status == 200 else None
+
+
 
 # Callback & Message Queries
 
@@ -1308,7 +1315,23 @@ async def check_sping(client, message):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     m = await message.reply_text("**🤖 𝐏ɪɴɢ...!!**")
-    await m.edit(f"**🤖 𝐏ɪɴɢᴇᴅ...!!\n𝐋ᴀᴛᴇɴᴄʏ:** `{ms}` ms") 
+    await m.edit(f"**🤖 𝐏ɪɴɢᴇᴅ...!!\n𝐋ᴀᴛᴇɴᴄʏ:** `{ms}` ms")
+
+
+@app.on_message(cdx("song") & ~pyrofl.bot)
+async def handle_song(_, message):
+    if not (name := message.text.split(maxsplit=1)[1:]):
+        return await message.reply("𝐏ʟᴇᴀ𝐬ᴇ 𝐏ʀᴏᴠɪᴅᴇ 𝐀 𝐒ᴏɴɢ 𝐍ᴀᴍᴇ...😒")
+    if not (song_info := await fetch_song(name[0])):
+        return await message.reply(f"'{name[0]}' 𝐍ᴏᴛ 𝐅ᴏᴜɴᴅ...❌")
+    
+    async with aiohttp.ClientSession() as s, s.get(song_info['downloadLink']) as r:
+        with open(f"{song_info['trackName']}.mp3", "wb") as f: f.write(await r.content.read())
+
+    caption = (f"❖ sᴏɴɢ ɴᴀᴍᴇ ➥ {song_info['trackName']}\n● ᴀʟʙᴜᴍ ➥ {song_info['album']}\n● ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ ➥ {song_info['releaseDate']}\n● ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥ {message.from_user.mention}\n\n❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ @EraVibesXbot")
+
+    await message.reply_audio(audio=open(f"{song_info['trackName']}.mp3", "rb"), caption=caption)
+    os.remove(f"{song_info['trackName']}.mp3")
 
 
 @bot.on_message(cdx(["repo", "repository"]) & ~pyrofl.bot)
