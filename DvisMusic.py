@@ -1319,19 +1319,25 @@ async def check_sping(client, message):
 
 
 @app.on_message(cdx("song") & ~pyrofl.bot)
-async def handle_song(_, message):
-    if not (name := message.text.split(maxsplit=1)[1:]):
-        return await message.reply("𝐏ʟᴇᴀ𝐬ᴇ 𝐏ʀᴏᴠɪᴅᴇ 𝐀 𝐒ᴏɴɢ 𝐍ᴀᴍᴇ...😒")
-    if not (song_info := await fetch_song(name[0])):
-        return await message.reply(f"'{name[0]}' 𝐍ᴏᴛ 𝐅ᴏᴜɴᴅ...❌")
+async def handle_song(bot, message):
+    name = message.text.split(maxsplit=1)[1:]  # Extract song name from message
+    if not name:
+        return await bot.send_message(message.chat.id, "𝐏ʟᴇᴀ𝐬ᴇ 𝐏ʀᴏᴠɪᴅᴇ 𝐀 𝐒ᴏɴɢ 𝐍ᴀᴍᴇ...😒")
     
-    async with aiohttp.ClientSession() as s, s.get(song_info['downloadLink']) as r:
-        with open(f"{song_info['trackName']}.mp3", "wb") as f: f.write(await r.content.read())
+    song_info = await fetch_song(name[0])
+    if not song_info:
+        return await bot.send_message(message.chat.id, f"'{name[0]}' 𝐍ᴏᴛ 𝐅ᴏᴜɴᴅ...❌")
+    
+    async with aiohttp.ClientSession() as s:
+        async with s.get(song_info['downloadLink']) as r:
+            with open(f"{song_info['trackName']}.mp3", "wb") as f:
+                f.write(await r.content.read())
 
-    caption = (f"❖ sᴏɴɢ ɴᴀᴍᴇ ➥ {song_info['trackName']}\n● ᴀʟʙᴜᴍ ➥ {song_info['album']}\n● ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ ➥ {song_info['releaseDate']}\n● ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥ {message.from_user.mention}\n\n❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ @EraVibesXbot")
+    caption = f"❖ sᴏɴɢ ɴᴀᴍᴇ ➥ {song_info['trackName']}\n● ᴀʟʙᴜᴍ ➥ {song_info['album']}\n● ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ ➥ {song_info['releaseDate']}\n● ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥ {message.from_user.mention}\n\n❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ @EraVibesXbot"
 
-    await message.reply_audio(audio=open(f"{song_info['trackName']}.mp3", "rb"), caption=caption)
+    await bot.send_audio(message.chat.id, audio=open(f"{song_info['trackName']}.mp3", "rb"), caption=caption)
     os.remove(f"{song_info['trackName']}.mp3")
+
 
 
 @bot.on_message(cdx(["repo", "repository"]) & ~pyrofl.bot)
