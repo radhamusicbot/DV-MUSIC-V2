@@ -2,7 +2,7 @@
   <img src="" alt="">
 </p>
 <h1 align="center">
-  DVIS MUSIC (Powerful Music Telegram Bot)
+  DVIS MUSIC (Powerful Telegram Music Bot)
 </h1>
 
 ![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome+To+DV-MUSIC-V2;A+Highly+Advance+Bot;Made+By+tg-@OfficialDurgesh!;Dvis+Music+is+an+advanced+&+powerful+multi-featured+Telegram+vc++streaming+bot+.;Must+Give+Credit+To+Dvis;Because+He+Public+The+Paid+Repo;Thank+You!)
@@ -17,8 +17,9 @@
 
 </h3>
 
+## About
 
-<h2>🤖 Dvis Music Info</h2>
+<b><details><summary>🤖 Dvis Music Info</summary>
 <p title="Dvis Music">Dvis Music is an open-source Telegram multi-featured vc streaming bot developed by using the Python programming language and Pyrogram MTProto client library of the Telegram API and PyTgCalls library, a secure and reliable way to interact with the Telegram platform.</p>
 
 <h2>♨️ Host DvisMusic On VPS Server</h2>
