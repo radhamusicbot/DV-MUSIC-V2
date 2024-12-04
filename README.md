@@ -5,8 +5,32 @@
   DVIS MUSIC (Powerful Telegram Music Bot)
 </h1>
 
-![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome+To+DV-MUSIC-V2;A+Highly+Advance+Bot;Made+By+tg-@OfficialDurgesh!;Dvis+Music+is+an+advanced+&+powerful+multi-featured+Telegram+vc++streaming+bot+.;Must+Give+Credit+To+Dvis;Because+He+Public+The+Paid+Repo;Thank+You!)
+![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome+To+DV-MUSIC-V2;A+Highly+Advance+Bot;Made+By+tg-@DvisDmBot!;Dvis+Music+is+an+advanced+&+powerful+multi-featured+Telegram+vc++streaming+bot+.;Must+Give+Credit+To+Dvis;Because+He+Public+The+Paid+Repo;Thank+You!)
 </p>
+
+
+## Command To Use Bot
+
+<b><details><summary>Tap On Me For Bot Commands</summary>
+
+🖍️ All Members Commands :-
+
+- `/start` : By This Command You Can Check Bot Is Alive Or Not
+- `/play` : Stream Only Audio On VC.
+- `/vplay ` :  Stream Audio With Video.
+
+🖍️ Only For Chat Admis Commands :-
+- `/pause` :  Pause Running Stream.
+- `/resume` : Resume Paused Stream.
+- `/skip` : Skip Current Stream To Next.
+- `/end` : Stop Current Running Stream.
+
+🖍️ Only For Owner Commands :-
+- `/ping` : Show The Ping
+- `/broadcast` or `/gcast` : By Using This Command You Can Broadcast A Message To Your Bot User, Reply This Command To Broadcast Message
+- `/stats` : Show The Stats Of Bots
+
+
 
 <h3 align="center">
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─
