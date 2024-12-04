@@ -29,7 +29,8 @@
 - `/ping` : Show The Ping
 - `/broadcast` or `/gcast` : By Using This Command You Can Broadcast A Message To Your Bot User, Reply This Command To Broadcast Message
 - `/stats` : Show The Stats Of Bots
-
+</b>
+</details>
 
 
 <h3 align="center">
