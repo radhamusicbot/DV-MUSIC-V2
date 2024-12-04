@@ -43,20 +43,12 @@
 - `OWNER_ID` : It mean Admin/Owner Id For Broadcasting Message.
 - `LOG_GROUP_ID` : Log group id start with -100xxxxxx
 - `START_IMAGE_URL` : Your Start Img Url
+</b>
 
 **Note:** have any problem or don't understand something, you can ask the **[sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ](https://t.me/+7ehnJA3aMb84OGNl)** or **[ᴅᴠɪs](https://t.me/DvisDmBot)** 
-</b>
+
 </details>
 
-
-<h3 align="center">
-    ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─
-</h3>
-
-<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/IamDvis/DV-MUSIC-V2"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
-
-
-</h3>
 
 ## About
 
@@ -65,7 +57,22 @@
 </b>
 </details>
 
-<h2>♨️ Host DvisMusic On VPS Server</h2>
+
+## Deploy/Host Method 
+
+<b><details><summary>Tap On Me For Deploy</summary>
+
+<details><summary>Host On Heroku</summary>
+<h3 align="left">
+    ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─
+</h3>
+
+<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/IamDvis/DV-MUSIC-V2"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+
+</h3> </details>
+
+
+<details><summary>Host On VPS Server</summary>
 
 
 **1. At First Copy & Paste Below Command.**
@@ -93,6 +100,10 @@
 **5. Now Exit From Screen & Close Your Vps & Enjoy**
 
 ```ctrl + a + d```
+
+</h3> </details>
+
+
 
 ## 📑 Acknowledgement / Credits
 
