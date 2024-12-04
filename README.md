@@ -1,7 +1,11 @@
-
 <p align="center">
-<b>Dvis Music</b><br/>
-Dvis Music is an advanced & powerful multi-featured Telegram vc streaming bot.
+  <img src="" alt="">
+</p>
+<h1 align="center">
+  DVIS MUSIC (For Telegram)
+</h1>
+
+![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome+To+DV-FILESTORE;A+Highly+Advance+Bot;Made+By+tg-@OfficialDurgesh!;Dvis+Music+is+an+advanced+&+powerful+multi+featured+Telegram+vc++streaming+bot+.;Must+Give+Credit+To+Dvis;Because+He+Public+The+Paid+Repo;Thank+You!)
 </p>
 
 <h3 align="center">
