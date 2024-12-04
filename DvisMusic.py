@@ -398,7 +398,7 @@ async def start_message_private(client, message):
 @bot.on_callback_query(rgx("help_command_list"))
 async def open_command_list_alert(client, query):
     caption = """
-♡━━━━━━━━━━━━━━⚆ _ ⚆━━━━━━━━━━━━━♡ 
+♡━━━━⚆ _ ⚆━━━━♡
 **✫ ᴀʟʟ ᴍᴇᴍʙᴇʀs ᴄᴀɴ ᴜsᴇ :**
   ● /play - Stream Only Audio On VC.
   ● /vplay - Stream Audio With Video.
@@ -411,7 +411,7 @@ async def open_command_list_alert(client, query):
 
 **Note:** All Commands Will Work
 Only in Channels/Groups.
-♡━━━━━━━━━━━━━━⚆ _ ⚆━━━━━━━━━━━━━♡
+♡━━━━⚆ _ ⚆━━━━♡
 
 **✫ ᴏɴʟʏ ғᴏʀ ᴏᴡɴᴇʀ :**
    ● /ping - Oᴡɴᴇʀs Nᴏᴡ
