@@ -9,10 +9,10 @@
 </p>
 
 
-## Command To Use Bot
+## 📒 Command To Use Bot
 
-<b><details><summary>Tap On Me For Bot Commands</summary>
-
+<details><summary>Tap On Me For Bot Commands</summary>
+<b>
 🖍️ All Members Commands :-
 
 - `/start` : By This Command You Can Check Bot Is Alive Or Not
@@ -32,9 +32,9 @@
 </b>
 </details>
 
-## Environment Variables
+## 👀 Environment Variables
 
-<b><details><summary>Tap On Me For Environment Variable</summary>
+<details><summary>Tap On Me For Environment Variable</summary>
 
 - `API_ID` : Get From [my.telegram.org](https://my.telegram.org)
 - `API_HASH` : Get From [my.telegram.org](https://my.telegram.org)
@@ -43,22 +43,20 @@
 - `OWNER_ID` : It mean Admin/Owner Id For Broadcasting Message.
 - `LOG_GROUP_ID` : Log group id start with -100xxxxxx
 - `START_IMAGE_URL` : Your Start Img Url
-</b>
 
 **Note:** have any problem or don't understand something, you can ask the **[sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ](https://t.me/+7ehnJA3aMb84OGNl)** or **[ᴅᴠɪs](https://t.me/DvisDmBot)** 
 
 </details>
 
 
-## About
+## 🤖 About
 
-<b><details><summary>🤖 Dvis Music Info</summary>
+<details><summary>Dvis Music Info</summary>
 <p title="Dvis Music">Dvis Music is an open-source Telegram multi-featured vc streaming bot developed by using the Python programming language and Pyrogram MTProto client library of the Telegram API and PyTgCalls library, a secure and reliable way to interact with the Telegram platform.</p>
-</b>
 </details>
 
 
-## Deploy/Host Method 
+## ♨️ Deploy/Host Method 
 
 <details><summary>Tap On Me For Deploy</summary>
 
@@ -108,9 +106,9 @@
 
 
 
-## 📑 Acknowledgement / Credits
+## 📑 Credits
 
-<b><details><summary>Tap On Me For See Credit</summary>
+<details><summary>Tap On Me For See Credit</summary>
 
 - [**`Pyrogram:`**](https://github.com/pyrogram) All functions of Dvis Music based on this mtproto client library.
 - [**`Py-TgCalls:`**](https://github.com/py-tgcalls) Telegram Streaming system of Dvis Music based on this library.
@@ -120,4 +118,6 @@
 - Copyright ©️ [𝐃𝐕𝐈𝐒](https://t.me/DvisDmBot), <i>Is Repo Ko Paid Karde Becha to Tu To Gaya Beta</i> 😈
 </b>
 </details>
+
+Copyright ©️ [𝐃𝐕𝐈𝐒](https://t.me/DvisDmBot), <i>Is Repo Ko Paid Karde Becha to Tu To Gaya Beta</i> 😈
  
