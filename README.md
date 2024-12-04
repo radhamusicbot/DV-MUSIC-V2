@@ -58,8 +58,6 @@
 
 ## ♨️ Deploy/Host Method 
 
-<details><summary>Tap On Me For Deploy</summary>
-
 
 <details><summary>Host On Heroku</summary>
 <h3 align="center">
@@ -102,8 +100,6 @@
 
  </h3> </details>
 
-</details>
-
 
 
 ## 📑 Credits
@@ -115,9 +111,9 @@
 - 💝 Credit Goes To Base Repo Owner [Aditya Halder](https://github.com/AdityaHalder)
 
 - 💖 And Thank You So Much To All Who Help In This Journey 💕
-- Copyright ©️ [𝐃𝐕𝐈𝐒](https://t.me/DvisDmBot), <i>Is Repo Ko Paid Karde Becha to Tu To Gaya Beta</i> 😈
+- Copyright ©️ [𝐃𝐕𝐈𝐒](https://t.me/DvisDmBot) 😈 <i>Is Repo Ko Paid Karde Becha to Tu To Gaya Beta</i> 😈
 </b>
 </details>
 
-Copyright ©️ [𝐃𝐕𝐈𝐒](https://t.me/DvisDmBot), <i>Is Repo Ko Paid Karde Becha to Tu To Gaya Beta</i> 😈
+**Copyright ©️ [𝐃𝐕𝐈𝐒](https://t.me/DvisDmBot) 😈 <i>Is Repo Ko Paid Karde Becha to Tu To Gaya Beta</i>** 😈
  
