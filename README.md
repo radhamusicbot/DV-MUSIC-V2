@@ -27,8 +27,8 @@
 
 🖍️ Only For Owner Commands :-
 - `/ping` : Show The Ping
-- `/broadcast` or `/gcast` : By Using This Command You Can Broadcast A Message To Your Bot User, Reply This Command To Broadcast Message
-- `/stats` : Show The Stats Of Bots
+- `/broadcast` or `/gcast` : Broadcast A Message To Your Bot User, Reply This Command To Broadcast Message
+- `/stats` : Show The Stats Of Bot
 </b>
 </details>
 
@@ -46,6 +46,8 @@
 
 <b><details><summary>🤖 Dvis Music Info</summary>
 <p title="Dvis Music">Dvis Music is an open-source Telegram multi-featured vc streaming bot developed by using the Python programming language and Pyrogram MTProto client library of the Telegram API and PyTgCalls library, a secure and reliable way to interact with the Telegram platform.</p>
+</b>
+</details>
 
 <h2>♨️ Host DvisMusic On VPS Server</h2>
 
@@ -76,8 +78,16 @@
 
 ```ctrl + a + d```
 
+## 📑 Acknowledgement / Credits
 
-<h2>📑 Acknowledgement / Credits</h2>
+<b><details><summary>Tap On Me For See Credit</summary>
 
 - [**`Pyrogram:`**](https://github.com/pyrogram) All functions of Dvis Music based on this mtproto client library.
 - [**`Py-TgCalls:`**](https://github.com/py-tgcalls) Telegram Streaming system of Dvis Music based on this library.
+- 💝 Credit Goes To Base Repo Owner [Aditya Halder](https://github.com/AdityaHalder)
+
+- 💖 And Thank You So Much To All Who Help In This Journey 💕
+- Copyright ©️ [𝐃𝐕𝐈𝐒](https://t.me/DvisDmBot), <i>Is Repo Ko Paid Karde Becha to Tu To Gaya Beta</i> 😈
+</b>
+</details>
+ 
