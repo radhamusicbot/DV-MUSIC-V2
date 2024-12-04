@@ -9,6 +9,13 @@
 </p>
 
 
+## 🤖 About
+
+<details><summary>Dvis Music Info</summary>
+<p title="Dvis Music">Dvis Music is an open-source Telegram multi-featured vc streaming bot developed by using the Python programming language and Pyrogram MTProto client library of the Telegram API and PyTgCalls library, a secure and reliable way to interact with the Telegram platform.</p>
+</details>
+
+
 ## 📒 Command To Use Bot
 
 <details><summary>Tap On Me For Bot Commands</summary>
@@ -46,13 +53,6 @@
 
 **Note:** have any problem or don't understand something, you can ask the **[sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ](https://t.me/+7ehnJA3aMb84OGNl)** or **[ᴅᴠɪs](https://t.me/DvisDmBot)** 
 
-</details>
-
-
-## 🤖 About
-
-<details><summary>Dvis Music Info</summary>
-<p title="Dvis Music">Dvis Music is an open-source Telegram multi-featured vc streaming bot developed by using the Python programming language and Pyrogram MTProto client library of the Telegram API and PyTgCalls library, a secure and reliable way to interact with the Telegram platform.</p>
 </details>
 
 
@@ -109,9 +109,7 @@
 - [**`Pyrogram:`**](https://github.com/pyrogram) All functions of Dvis Music based on this mtproto client library.
 - [**`Py-TgCalls:`**](https://github.com/py-tgcalls) Telegram Streaming system of Dvis Music based on this library.
 - 💝 Credit Goes To Base Repo Owner [Aditya Halder](https://github.com/AdityaHalder)
-
 - 💖 And Thank You So Much To All Who Help In This Journey 💕
-- Copyright ©️ [𝐃𝐕𝐈𝐒](https://t.me/DvisDmBot) 😈 <i>Is Repo Ko Paid Karde Becha to Tu To Gaya Beta</i> 😈
 </b>
 </details>
 
