@@ -1318,7 +1318,7 @@ async def check_sping(client, message):
     await m.edit(f"**🤖 𝐏ɪɴɢᴇᴅ...!!\n𝐋ᴀᴛᴇɴᴄʏ:** `{ms}` ms")
 
 
-@app.on_message(filters.command("song"))
+@bot.on_message(cdx("song") & ~pyrofl.bot)
 async def handle_song(client, message):
     song_name = message.text.split(" ", 1)[1] if len(message.command) > 1 else None
     if not song_name:
