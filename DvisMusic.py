@@ -1331,7 +1331,7 @@ async def handle_song(bot, message):
     # Use Pyrogram's downloader for media to ensure authentication
     file_path = await bot.download_media(song_info['downloadLink'], file_name=f"{song_info['trackName']}.mp3")
 
-   caption = f"❖ sᴏɴɢ ɴᴀᴍᴇ ➥ {song_info['trackName']}\n● ᴀʟʙᴜᴍ ➥ {song_info['album']}\n● ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ ➥ {song_info['releaseDate']}\n● ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥ {message.from_user.mention}\n\n❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ @EraVibesXbot"
+ caption = f"❖ sᴏɴɢ ɴᴀᴍᴇ ➥ {song_info['trackName']}\n● ᴀʟʙᴜᴍ ➥ {song_info['album']}\n● ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ ➥ {song_info['releaseDate']}\n● ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥ {message.from_user.mention}\n\n❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ @EraVibesXbot"
     
     await bot.send_audio(message.chat.id, audio=open(file_path, "rb"), caption=caption)
     os.remove(file_path)  # Cleanup
