@@ -398,7 +398,7 @@ async def start_message_private(client, message):
 @bot.on_callback_query(rgx("help_command_list"))
 async def open_command_list_alert(client, query):
     caption = """
-♡━━━━⚆ _ ⚆━━━━♡
+♡━━━━━━━━━━━━⚆ _ ⚆━━━━━━━━━━━━━♡
 **✫ ᴀʟʟ ᴍᴇᴍʙᴇʀs ᴄᴀɴ ᴜsᴇ :**
   ● /play - Stream Only Audio On VC.
   ● /vplay - Stream Audio With Video.
@@ -411,12 +411,12 @@ async def open_command_list_alert(client, query):
 
 **Note:** All Commands Will Work
 Only in Channels/Groups.
-♡━━━━⚆ _ ⚆━━━━♡
+♡━━━━━━━━━━━━⚆ _ ⚆━━━━━━━━━━━━━♡
 
 **✫ ᴏɴʟʏ ғᴏʀ ᴏᴡɴᴇʀ :**
-   ● /ping - Oᴡɴᴇʀs Nᴏᴡ
-   ● /stats - Oᴡɴᴇʀs Nᴏᴡ
-   ● /gcast - Oᴡɴᴇʀs Nᴏᴡ
+   ● /ping - Oᴡɴᴇʀs Kɴᴏᴡ
+   ● /stats - Oᴡɴᴇʀs Kɴᴏᴡ
+   ● /gcast - Oᴡɴᴇʀs Kɴᴏᴡ
 
 """
     buttons = InlineKeyboardMarkup(
@@ -465,8 +465,8 @@ async def back_to_home_menu(client, query):
             ],
             [
                 InlineKeyboardButton(
-                    text="ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs",
-                    callback_data="open_command_list",
+                    text="💌 𝖧ᴇʟᴘ $ 𝖢ᴏᴍᴍᴀɴᴅs 💌",
+                    callback_data="help_command_list",
                 )
             ],
         ]
@@ -1319,23 +1319,32 @@ async def check_sping(client, message):
 
 
 @bot.on_message(cdx("song") & ~pyrofl.bot)
-async def handle_song(bot, message):
-    name = message.text.split(maxsplit=1)[1:]
-    if not name:
-        return await bot.send_message(message.chat.id, "𝐏ʟᴇᴀ𝐬ᴇ 𝐏ʀᴏᴠɪᴅᴇ 𝐀 𝐒ᴏɴɢ 𝐍ᴀᴍᴇ...😒")
+async def handle_song(client, message):
+    song_name = message.text.split(" ", 1)[1] if len(message.command) > 1 else None
+    if not song_name:
+        return await message.reply("𝐏ʟᴇᴀ𝐬ᴇ 𝐏ʀᴏᴠɪᴅᴇ 𝐀 𝐒ᴏɴɢ 𝐍ᴀᴍᴇ...😒")
 
-    song_info = await fetch_song(name[0])
+    song_info = fetch_song(song_name)
     if not song_info:
-        return await bot.send_message(message.chat.id, f"'{name[0]}' 𝐍ᴏᴛ 𝐅ᴏᴜɴᴅ...❌")
+        return await message.reply(f"'{song_name}' 𝐍ᴏᴛ 𝐅ᴏᴜɴᴅ...❌")
 
-    # Use Pyrogram's downloader for media to ensure authentication
-    file_path = await bot.download_media(song_info['downloadLink'], file_name=f"{song_info['trackName']}.mp3")
+    filename = f"{song_info['trackName']}.mp3"
+    download_url = song_info['downloadLink']
+
+    # Download file using aiohttp
+    async with aiohttp.ClientSession() as session:
+        async with session.get(download_url) as resp:
+            with open(filename, "wb") as file:
+                while chunk := await resp.content.read(1024):
+                    file.write(chunk)
 
     caption = (f"""❖ sᴏɴɢ ɴᴀᴍᴇ ➥ {song_info['trackName']}\n● ᴀʟʙᴜᴍ ➥ {song_info['album']}\n● ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ ➥ {song_info['releaseDate']}\n● ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥ {message.from_user.mention}\n\n❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ @EraVibesXbot""")
     
-    await bot.send_audio(message.chat.id, audio=open(file_path, "rb"), caption=caption)
-    os.remove(file_path)  # Cleanup
-
+    # Send audio and cleanup
+    try:
+        await message.reply_audio(audio=open(filename, "rb"), caption=caption)
+    finally:
+        os.remove(filename)
 
 
 @bot.on_message(cdx(["repo", "repository"]) & ~pyrofl.bot)
