@@ -1318,26 +1318,23 @@ async def check_sping(client, message):
     await m.edit(f"**🤖 𝐏ɪɴɢᴇᴅ...!!\n𝐋ᴀᴛᴇɴᴄʏ:** `{ms}` ms")
 
 
-@app.on_message(cdx("song") & ~pyrofl.bot)
+@bot.on_message(cdx("song") & ~pyrofl.bot)
 async def handle_song(bot, message):
-    name = message.text.split(maxsplit=1)[1:]  # Extract song name from message
+    name = message.text.split(maxsplit=1)[1:]
     if not name:
         return await bot.send_message(message.chat.id, "𝐏ʟᴇᴀ𝐬ᴇ 𝐏ʀᴏᴠɪᴅᴇ 𝐀 𝐒ᴏɴɢ 𝐍ᴀᴍᴇ...😒")
-    
+
     song_info = await fetch_song(name[0])
     if not song_info:
         return await bot.send_message(message.chat.id, f"'{name[0]}' 𝐍ᴏᴛ 𝐅ᴏᴜɴᴅ...❌")
+
+    # Use Pyrogram's downloader for media to ensure authentication
+    file_path = await bot.download_media(song_info['downloadLink'], file_name=f"{song_info['trackName']}.mp3")
+
+   caption = f"❖ sᴏɴɢ ɴᴀᴍᴇ ➥ {song_info['trackName']}\n● ᴀʟʙᴜᴍ ➥ {song_info['album']}\n● ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ ➥ {song_info['releaseDate']}\n● ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥ {message.from_user.mention}\n\n❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ @EraVibesXbot"
     
-    async with aiohttp.ClientSession() as s:
-        async with s.get(song_info['downloadLink']) as r:
-            with open(f"{song_info['trackName']}.mp3", "wb") as f:
-                f.write(await r.content.read())
-
-    caption = f"❖ sᴏɴɢ ɴᴀᴍᴇ ➥ {song_info['trackName']}\n● ᴀʟʙᴜᴍ ➥ {song_info['album']}\n● ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ ➥ {song_info['releaseDate']}\n● ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥ {message.from_user.mention}\n\n❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ @EraVibesXbot"
-
-    await bot.send_audio(message.chat.id, audio=open(f"{song_info['trackName']}.mp3", "rb"), caption=caption)
-    os.remove(f"{song_info['trackName']}.mp3")
-
+    await bot.send_audio(message.chat.id, audio=open(file_path, "rb"), caption=caption)
+    os.remove(file_path)  # Cleanup
 
 
 @bot.on_message(cdx(["repo", "repository"]) & ~pyrofl.bot)
