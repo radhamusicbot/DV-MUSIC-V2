@@ -1439,7 +1439,7 @@ async def update_repo_latest(client, message):
         f"{nrs.text}\n\nBot was updated successfully! Now, wait for 1 - 2 mins until the bot reboots!"
     )
     os.system("pip3 install -r requirements.txt --force-reinstall")
-    os.system(f"kill -9 {os.getpid()} && python3 -m DvisMusicr")
+    os.system(f"kill -9 {os.getpid()} && python3 -m DvisMusic")
     sys.exit()
     return
 
