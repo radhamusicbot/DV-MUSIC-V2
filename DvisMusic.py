@@ -357,7 +357,7 @@ async def start_message_private(client, message):
 │❍ • ɴᴏ ʟᴀɢs + ɴᴏ ᴀᴅs •‍
 │❍ • 24x7 ᴏɴʟɪɴᴇ sᴜᴘᴘᴏʀᴛ •‍
 ├───────────────────⦿‍
-│           [✰ 𝖮ᴡ፝֠֩𝛈𝛆ʀ  ✰](https://t.me/DvisDmBot)
+│           [✰ 𝖮ᴡ፝֠֩𝛈𝛆ʀ  ✰](https://t.me/iamakki001)
 ╰───────────────────⦿"""
     buttons = InlineKeyboardMarkup(
         [
@@ -453,7 +453,7 @@ async def back_to_home_menu(client, query):
 │❍ • ɴᴏ ʟᴀɢs + ɴᴏ ᴀᴅs •‍
 │❍ • 24x7 ᴏɴʟɪɴᴇ sᴜᴘᴘᴏʀᴛ •‍
 ├───────────────────⦿‍
-│               [✰ 𝖮ᴡ፝֠֩𝛈𝛆ʀ  ✰](https://t.me/DvisDmBot)
+│               [✰ 𝖮ᴡ፝֠֩𝛈𝛆ʀ  ✰](https://t.me/iamakki001)
 ╰───────────────────⦿"""
     buttons = InlineKeyboardMarkup(
         [
@@ -761,7 +761,7 @@ async def stream_logger(
 **❍ Cʜᴀᴛ Lɪɴᴋ:** {chat_link}
 **❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}
 
-❍ 𝖩ᴏɪɴ ➛ **[sᴜᴘᴘᴏꝛᴛ](https://t.me/+7ehnJA3aMb84OGNl)**"""
+❍ 𝖩ᴏɪɴ ➛ **[sᴜᴘᴘᴏꝛᴛ](https://t.me/iamvillain77)**"""
             else:
                 caption = f"""**✅ 𝐒ᴛᴀʀᴛᴇᴅ 𝐒ᴛʀᴇᴀᴍɪɴɢ 𝐎ɴ 𝐕ᴄ.**
 
@@ -772,7 +772,7 @@ async def stream_logger(
 **❍ Cʜᴀᴛ Lɪɴᴋ:** {chat_link}
 **❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}
 
-❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛ @EraVibesXbot"""
+❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛ ꪜ 𝛊 ɭ ɭ ᧘ 𝛊 𝛈"""
             try:
                 await bot.send_photo(LOG_GROUP_ID, photo=thumbnail, caption=caption)
             except Exception:
@@ -832,7 +832,7 @@ async def change_stream(chat_id):
 **❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ ➥ ** {stream_type}
 **❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥ ** {requested_by}
 
-❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛ @EraVibesXbot"""
+❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛ ꪜ 𝛊 ɭ ɭ ᧘ 𝛊 𝛈"""
     buttons = InlineKeyboardMarkup(
         [
             [
@@ -1038,7 +1038,7 @@ async def stream_audio_or_video(client, message):
 **❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ ➥ ** {stream_type}
 **❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥ ** {requested_by}
 
-❍ 𝖩ᴏɪɴ ➛ **[sᴜᴘᴘᴏꝛᴛ](https://t.me/+7ehnJA3aMb84OGNl)**"""
+❍ 𝖩ᴏɪɴ ➛ **[sᴜᴘᴘᴏꝛᴛ](https://t.me/iamvillain77)**"""
                 await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
                 await stream_logger(
                     chat_id, user, title, duration, stream_type, thumbnail, position
@@ -1147,7 +1147,7 @@ async def stream_audio_or_video(client, message):
 **❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ ➥ ** {stream_type}
 **❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥ ** {requested_by}
 
-❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛ @EraVibesXbot"""
+❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛ ꪜ 𝛊 ɭ ɭ ᧘ 𝛊 𝛈"""
                 await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
                 await stream_logger(
                     chat_id, user, title, duration, stream_type, thumbnail
@@ -1339,7 +1339,7 @@ async def handle_song(client, message):
                     file.write(chunk)
 
     # Caption with your requested text
-    caption = (f"""❖ sᴏɴɢ ɴᴀᴍᴇ ➥ {song_info['trackName']}\n● ᴀʟʙᴜᴍ ➥ {song_info['album']}\n● ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ ➥ {song_info['releaseDate']}\n● ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥ {message.from_user.mention}\n\n❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ @EraVibesXbot""")
+    caption = (f"""❖ sᴏɴɢ ɴᴀᴍᴇ ➥ {song_info['trackName']}\n● ᴀʟʙᴜᴍ ➥ {song_info['album']}\n● ʀᴇʟᴇᴀsᴇ ᴅᴀᴛᴇ ➥ {song_info['releaseDate']}\n● ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥ {message.from_user.mention}\n\n❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ ꪜ 𝛊 ɭ ɭ ᧘ 𝛊 𝛈""")
 
     # Send audio and cleanup
     try:
@@ -1370,7 +1370,7 @@ async def git_repo_link(client, message):
 │❍ • ɴᴏ ʟᴀɢs + ɴᴏ ᴀᴅs •‍
 │❍ • 24x7 ᴏɴʟɪɴᴇ sᴜᴘᴘᴏʀᴛ •‍
 ├───────────────────⦿‍
-│        [✰ 𝖮ᴡ፝֠֩𝛈𝛆ʀ  ✰](https://t.me/DvisDmBot)
+│        [✰ 𝖮ᴡ፝֠֩𝛈𝛆ʀ  ✰](https://iamakki001)
 ╰───────────────────⦿"""
     else:
         caption = f"**➻ Hello, {mention}.**"
@@ -1379,7 +1379,7 @@ async def git_repo_link(client, message):
             [
                 InlineKeyboardButton(
                     text="🌺 𝐎ᴘᴇɴ 𝐑ᴇᴘᴏsɪᴛᴏʀʏ 𝐋ɪɴᴋ 🦋",
-                    url="https://github.com/IamDvis/DV-MUSIC-V2",
+                    url="https://t.me/iamvillain77",
                 )
             ],
             [
